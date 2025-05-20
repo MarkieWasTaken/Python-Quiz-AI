@@ -51,5 +51,7 @@ Install it to the default path:
 
 C:\Program Files\Tesseract-OCR\
 
+UPDATE: 2
+
 
 
