@@ -1,5 +1,4 @@
 Pillow
-pytesseract
 google-generativeai
 keyboard
 plyer

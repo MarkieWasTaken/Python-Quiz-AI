@@ -2,7 +2,6 @@ import os
 import time
 from datetime import datetime
 from PIL import ImageGrab, Image
-import pytesseract
 import google.generativeai as genai
 import keyboard
 import tkinter as tk
@@ -12,8 +11,6 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
 # Configure Gemini API
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
@@ -21,9 +18,6 @@ screenshot_dir = "screenshot-history"
 os.makedirs(screenshot_dir, exist_ok=True)
 
 screenshot_region = None
-
-def extract_text_from_image(image: Image.Image) -> str:
-    return pytesseract.image_to_string(image)
 
 def ask_gemini_vision(image: Image.Image) -> str:
     """Send image directly to Gemini vision model for better accuracy"""

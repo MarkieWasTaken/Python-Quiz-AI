@@ -12,7 +12,6 @@ With a single hotkey, it captures a selected region of your screen, analyzes it 
 - 🔔 Instant Windows toast notification with the answer
 - 🎯 Fully hotkey-driven (no GUI popup)
 - 📁 Screenshots saved in `screenshot-history` folder
-- 🔤 OCR text extraction using Tesseract
 
 ---
 
@@ -44,40 +43,17 @@ pip install -r requirements.txt
 Or install manually:
 
 ```bash
-pip install Pillow pytesseract google-generativeai keyboard plyer python-dotenv
+pip install Pillow google-generativeai keyboard plyer python-dotenv
 ```
 
-### Step 3: Install Tesseract OCR
-
-Tesseract is required for text extraction from images.
-
-#### For Windows:
-
-1. Download the installer from UB Mannheim:
-   - 🔗 [https://github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki)
-2. Run the `.exe` installer (e.g., `tesseract-5.x.x-setup.exe`)
-3. Install to the default path: `C:\Program Files\Tesseract-OCR\`
-
-#### For macOS:
-
-```bash
-brew install tesseract
-```
-
-#### For Linux:
-
-```bash
-sudo apt-get install tesseract-ocr
-```
-
-### Step 4: Get Google Gemini API Key
+### Step 3: Get Google Gemini API Key
 
 1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
 2. Sign in with your Google account
 3. Click "Create API Key"
 4. Copy your API key
 
-### Step 5: Configure Environment Variables
+### Step 4: Configure Environment Variables
 
 1. Create a `.env` file in the project root directory:
 
@@ -95,7 +71,7 @@ touch .env
 GEMINI_API_KEY=your_api_key_here
 ```
 
-Replace `your_api_key_here` with the actual API key from Step 4.
+Replace `your_api_key_here` with the actual API key from Step 3.
 
 ---
 
@@ -144,10 +120,6 @@ You should see:
 
 ## 🛠️ Troubleshooting
 
-**Issue: "Tesseract not found"**
-- Verify Tesseract is installed at `C:\Program Files\Tesseract-OCR\tesseract.exe`
-- Update the path in `index.py` line 15 if installed elsewhere
-
 **Issue: "GEMINI_API_KEY not found"**
 - Ensure `.env` file exists in the project root
 - Check that the API key is correctly formatted in `.env`
@@ -155,6 +127,10 @@ You should see:
 **Issue: Hotkeys not working**
 - Make sure you run the script with administrator privileges on Windows
 - Check if another application is using the same hotkey combination
+
+**Issue: API errors or rate limits**
+- Verify your Gemini API key is valid and active
+- Check your API quota at [Google AI Studio](https://aistudio.google.com/)
 
 ---
 

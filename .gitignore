@@ -15,5 +15,5 @@ ENV/
 .vscode/
 .idea/
 
-# Screenshot history (optional - uncomment if you don't want to track screenshots)
-# screenshot-history/
+# Screenshot history
+screenshot-history/
