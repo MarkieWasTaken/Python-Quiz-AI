@@ -1,0 +1,6 @@
+Pillow
+pytesseract
+google-generativeai
+keyboard
+plyer
+python-dotenv
